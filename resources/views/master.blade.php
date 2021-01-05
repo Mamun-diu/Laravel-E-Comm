@@ -11,6 +11,17 @@
             min-height: 450px;
             padding-top : 100px;
         }
+        .custom-product{
+            min-height : 500px;
+        }
+        .slider-img{
+            height : 400px !important;
+            width : 100% !important;
+        }
+        .carousel-caption{
+            background: linear-gradient(45deg, #2ecf9f75,#51af93e6,#2637a5,#0afdb5c2 , transparent);
+            border-radius: 64px;
+        }
     </style>
 </head>
 <body>
