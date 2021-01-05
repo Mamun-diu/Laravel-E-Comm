@@ -19,7 +19,7 @@
             width : 100% !important;
         }
         .carousel-caption{
-            background: linear-gradient(45deg, #2ecf9f75,#51af93e6,#2637a5,#0afdb5c2 , transparent);
+            
             border-radius: 64px;
         }
     </style>
