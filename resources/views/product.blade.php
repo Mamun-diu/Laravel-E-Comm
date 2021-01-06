@@ -14,7 +14,7 @@ function color(){
     return $arr1;
 }
 ?>
-<div class="bg-secondary">
+<div class="">
     <div class="container custom-product pt-3">
         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
             <ol class="carousel-indicators">
@@ -38,12 +38,14 @@ function color(){
                 @foreach($data as $product)
                 <?php $j++; ?>
                 <div class="carousel-item {{ $j==1?'active':'' }}" data-bs-interval="10000">
-                    <img class="slider-img" src="{{ $product->gallery }}" class="d-block w-100" alt="...">
-                    <div style="background: linear-gradient(45deg, {{ color() }},{{ color() }},{{ color() }},{{ color() }},{{ color() }} , transparent);" class="carousel-caption d-none d-md-block ">
-                        <h5 class="text-light">Name: {{ $product->name }} </h5>
-                        <h5 class="text-light">Price: {{ $product->price }} </h5>
-                        <p class="text-warning">{{ $product->description }}</p>
-                    </div>
+                    <a href="{{ URL::to('details/'.$product->id) }}">
+                        <img class="slider-img" src="{{ $product->gallery }}" class="d-block w-100" alt="...">
+                        <div style="background: linear-gradient(45deg, <?php for($m=1;$m<=8;$m++){echo color().',';} ?> transparent);" class="carousel-caption d-none d-md-block ">
+                            <h5 class="text-light">Name: {{ $product->name }} </h5>
+                            <h5 class="text-light">Price: {{ $product->price }} </h5>
+                            <p class="text-warning">{{ $product->description }}</p>
+                        </div>
+                    </a>
                 </div>
                 @endforeach
 
@@ -56,6 +58,25 @@ function color(){
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </a>
+        </div>
+        <div>
+            <h1>Trending Products</h1>
+            <div class="trending-wrapper">
+                @foreach($data as $product)
+                <div class="custom-card-group card-group mt-2  ">
+                    <a href="{{ URL::to('details/'.$product->id) }}">
+                        <div class="custom-card card">
+                            <div class="custom-card-body card-body">
+                                <img class="trending-img" src="{{ $product->gallery }}" class="d-block w-100" alt="...">
+                            </div>
+                          <div class="card-footer">
+                            <small class="text-muted">{{ $product->name }}</small>
+                          </div>
+                        </div>
+                    </a>
+                </div>
+                @endforeach
+            </div>
         </div>
     </div>
 </div>

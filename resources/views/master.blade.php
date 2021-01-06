@@ -12,15 +12,39 @@
             padding-top : 100px;
         }
         .custom-product{
-            min-height : 500px;
+            min-height : 430px;
         }
         .slider-img{
             height : 400px !important;
             width : 100% !important;
         }
         .carousel-caption{
-            
+
             border-radius: 64px;
+        }
+        .trending-img{
+            width: 100%;
+        }
+        .trending-wrapper{
+            overflow: hidden;
+        }
+        .custom-card-group{
+            float : left;
+            width : 18%;
+            margin-right : 2.5%;
+
+        }
+        .custom-card-group:last-child{
+            margin-right : 0;
+        }
+        .custom-card{
+
+        }
+        .custom-card-body{
+            padding: 0;
+        }
+        .details-img{
+            height : 200px;
         }
     </style>
 </head>
