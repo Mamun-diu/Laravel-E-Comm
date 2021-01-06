@@ -46,6 +46,12 @@
         .details-img{
             height : 200px;
         }
+        .search-box{
+            width : 500px;
+        }
+        a{
+            text-decoration : none;
+        }
     </style>
 </head>
 <body>
