@@ -52,6 +52,9 @@
         a{
             text-decoration : none;
         }
+        .cart-img{
+            height : 150px;
+        }
     </style>
 </head>
 <body>

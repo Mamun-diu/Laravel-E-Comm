@@ -44,7 +44,7 @@
                 @else
                 <li class="nav-item"><a class="nav-link" href="{{ URL::to('/login') }}">Login</a></li>
                 @endif
-                <li class="nav-item"><a class="nav-link" href="#">Cart({{ $total }})</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ URL::to('/cartlist') }}">Cart({{ $total }})</a></li>
             </ul>
 
         </div>
