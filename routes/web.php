@@ -31,3 +31,4 @@ Route::get('/logout',[UserController::class, 'logout']);
 
 Route::get('cartlist',[ProductController::class, 'cartList'] );
 Route::get('remove/cart/{id}',[ProductController::class, 'removeCart'] );
+Route::get('order',[ProductController::class, 'orderNow'] );

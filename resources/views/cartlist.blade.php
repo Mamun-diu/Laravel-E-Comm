@@ -5,6 +5,7 @@
     <div class="container custom-product pt-3">
         <div>
             <h2>Your Cart List</h2>
+            <a class="btn btn-info mt-3" href="{{ URL::to('/order') }}">Order Now</a>
             <div class="trending-wrapper">
                 @foreach($products as $product)
                 <hr>
@@ -29,6 +30,7 @@
 
                 @endforeach
             </div>
+            <a class="btn btn-info mt-3" href="{{ URL::to('/order') }}">Order Now</a>
         </div>
     </div>
 </div>
