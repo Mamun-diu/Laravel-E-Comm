@@ -24,23 +24,23 @@
                 </tr>
             </tbody>
         </table>
-        <form action="">
+        <form action="{{ URL::to('orderplace') }}" method="post">
             @csrf
             <div class="form-group">
-                <textarea class="form-control" placeholder="Enter your address..." name=""  rows="3"></textarea>
+                <textarea class="form-control" placeholder="Enter your address..." name="address"  rows="3"></textarea>
             </div>
             <div class="form-group my-2">
                 <label  for="">Payment Method</label>
                 <p class=" ">
-                    <input class="" type="radio" name="payment">
+                    <input class="" type="radio"  name="payment" value="cash">
                     <span>Online Payment</span>
                 </p>
                 <p class=" ">
-                    <input class="" type="radio" name="payment">
+                    <input class="" type="radio" name="payment" value="cash">
                     <span>EMI Payment</span>
                 </p>
                 <p class=" ">
-                    <input class="" type="radio" name="payment">
+                    <input class="" type="radio" name="payment" value="cash">
                     <span>Cash on Delivery</span>
                 </p>
             </div>

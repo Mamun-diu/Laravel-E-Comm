@@ -55,6 +55,10 @@
         .cart-img{
             height : 150px;
         }
+        .order-info{
+            width: 140px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>

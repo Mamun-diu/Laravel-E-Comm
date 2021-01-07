@@ -24,7 +24,6 @@
                     </div>
                     <div class="col-sm-3">
                         <a href="{{ URL::to('/remove/cart/'.$product->cart_id) }}" class="btn btn-danger">Remove From Cart</a>
-                        <button class="btn btn-success">Buy Now</button>
                     </div>
                 </div>
 

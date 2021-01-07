@@ -19,7 +19,7 @@
                     <a class="nav-link active" href="{{ URL::to('/') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Orders</a>
+                    <a class="nav-link " href="{{ URL::to('/myorder') }}">My Orders</a>
                 </li>
 
 
@@ -43,7 +43,9 @@
                 </li>
                 @else
                 <li class="nav-item"><a class="nav-link" href="{{ URL::to('/login') }}">Login</a></li>
+                <li class="nav-item"><a class="nav-link " href="{{ URL::to('/register') }}">Register</a></li>
                 @endif
+
                 <li class="nav-item"><a class="nav-link" href="{{ URL::to('/cartlist') }}">Cart({{ $total }})</a></li>
             </ul>
 
