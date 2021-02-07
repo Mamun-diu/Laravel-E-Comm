@@ -43,13 +43,18 @@ class ProductController extends Controller
         return Cart::where('user_id',$userId)->count();
     }
     function cartList(){
-         $userId = Session::get('user')['id'];
-         $data = DB::table('cart')
-        ->join('products', 'cart.product_id', 'products.id')
-        ->select('products.*','cart.id as cart_id')
-        ->where('cart.user_id',$userId)
-        ->get();
-        return view('cartlist')->with('products',$data);
+        if(Session::has('user')){
+            $userId = Session::get('user')['id'];
+            $data = DB::table('ecom_cart')
+            ->join('ecom_products', 'ecom_cart.product_id', 'ecom_products.id')
+            ->select('ecom_products.*','ecom_cart.id as cart_id')
+            ->where('ecom_cart.user_id',$userId)
+            ->get();
+            return view('cartlist')->with('products',$data);
+        }else{
+            return redirect('/login');
+        }
+
     }
     function removeCart($id){
        Cart::destroy($id);
@@ -57,10 +62,10 @@ class ProductController extends Controller
     }
     function orderNow(){
         $userId = Session::get('user')['id'];
-         $total = DB::table('cart')
-        ->join('products', 'cart.product_id', 'products.id')
-        ->where('cart.user_id',$userId)
-        ->sum('products.price');
+         $total = DB::table('ecom_cart')
+        ->join('ecom_products', 'ecom_cart.product_id', 'ecom_products.id')
+        ->where('ecom_cart.user_id',$userId)
+        ->sum('ecom_products.price');
         return view('ordernow')->with('total',$total);
     }
 
@@ -81,13 +86,19 @@ class ProductController extends Controller
         return redirect('/');
     }
     function myOrder(){
+
+        if(Session::has('user')){
         $userId = Session::get('user')['id'];
-        $product = DB::table('orders')
-        ->join('products','orders.product_id', 'products.id')
-        ->where('orders.user_id',$userId)
+        $product = DB::table('ecom_orders')
+        ->join('ecom_products','ecom_orders.product_id', 'ecom_products.id')
+        ->where('ecom_orders.user_id',$userId)
 
         ->get();
 
         return view('myorder')->with('products',$product);
+        }else{
+            return redirect('/login');
+        }
+
     }
 }
